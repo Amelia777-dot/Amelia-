@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Amelia</title>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+body {
+  font-family: 'Poppins', sans-serif;
+  background:#050008;
+  color:#fff;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  height:100vh;
+  margin:0;
+  overflow:hidden;
+}
+
+#particles-js {
+  position:absolute;
+  inset:0;
+  z-index:0;
+}
+
+.cheat-menu {
+  background: rgba(255,105,180,0.12);
+  backdrop-filter: blur(18px);
+  padding:25px;
+  border-radius:22px;
+  width:350px;
+  border:1px solid rgba(255,105,180,0.6);
+  position:relative;
+  z-index:1;
+  box-shadow:0 0 35px rgba(255,105,180,0.9);
+  text-align:center;
+  overflow:hidden;
+}
+
+#inner-particles{
+  position:absolute;
+  inset:0;
+  z-index:0;
+}
+
+.profile-img{
+  width:120px;
+  height:120px;
+  object-fit:cover;
+  border-radius:50%;
+  border:3px solid #ff69b4;
+  box-shadow:0 0 25px #ff69b4;
+  margin-bottom:15px;
+  position:relative;
+  z-index:2;
+}
+
+h1{
+  color:#ff69b4;
+  letter-spacing:3px;
+  margin-bottom:20px;
+  animation: glow 3s infinite alternate;
+  position:relative;
+  z-index:2;
+}
+
+@keyframes glow{
+  from{ text-shadow:0 0 10px #ff69b4; }
+  to{ text-shadow:0 0 30px #ff9ad5; }
+}
+
+/* أزرار السوشيال */
+.social-buttons{
+  display:flex;
+  gap:15px;
+  justify-content:center;
+  margin-top:20px;
+  position:relative;
+  z-index:2;
+}
+
+.social-btn{
+  flex:1;
+  padding:15px;
+  border-radius:12px; /* مربعة بزوايا ناعمة */
+  background: rgba(255,105,180,0.2);
+  border:2px solid #ff69b4;
+  color:#fff;
+  font-weight:bold;
+  text-decoration:none;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:12px;
+  transition:0.3s all ease;
+  position:relative;
+  overflow:hidden;
+  box-shadow:0 4px 15px rgba(255,105,180,0.5);
+}
+
+.social-btn::after {
+  content:"";
+  position:absolute;
+  top:0;
+  left:-100%;
+  width:100%;
+  height:100%;
+  background: rgba(255,255,255,0.15);
+  transform: skewX(-20deg);
+  transition:0.5s;
+}
+
+.social-btn:hover::after{
+  left:100%;
+}
+
+.social-btn i{
+  font-size:20px;
+  transition:0.3s;
+}
+
+.social-btn:hover{
+  background: rgba(255,105,180,0.4);
+  color:#000;
+  box-shadow:0 0 20px #ff69b4, 0 0 35px rgba(255,105,180,0.6);
+  transform: scale(1.05);
+}
+
+.social-btn:active{
+  transform: scale(0.95); /* تأثير النقر */
+  box-shadow:0 0 15px #ff69b4;
+}
+</style>
+</head>
+
+<body>
+
+<div id="particles-js"></div>
+
+<div class="cheat-menu">
+  <div id="inner-particles"></div>
+
+  <img class="profile-img"
+  src="https://i.ibb.co/gFgkrW7q/IMG-3992.jpg"
+  alt="Amelia">
+
+  <h1>Amelia</h1>
+
+  <div class="social-buttons">
+    <a class="social-btn" href="https://www.instagram.com/fluorite.officials?igsh=NDJoaG00a29lajFo&utm_source=qr" target="_blank">
+      <i class="fab fa-instagram"></i> My Instagram
+    </a>
+
+    <a class="social-btn" href="https://t.me/Ameliaxss" target="_blank">
+      <i class="fab fa-telegram"></i> My Telegram
+    </a>
+  </div>
+</div>
+
+<!-- particles -->
+<script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+<script>
+particlesJS("particles-js",{
+  particles:{
+    number:{value:120,density:{enable:true,value_area:800}},
+    color:{value:"#ff69b4"},
+    shape:{type:"circle"},
+    opacity:{value:0.8},
+    size:{value:4,random:true},
+    line_linked:{enable:true,distance:150,color:"#ff69b4",opacity:0.6,width:2},
+    move:{enable:true,speed:8}
+  },
+  interactivity:{events:{onhover:{enable:true,mode:"repulse"}}},
+  retina_detect:true
+});
+
+particlesJS("inner-particles",{
+  particles:{
+    number:{value:50},
+    color:{value:"#ffffff"},
+    opacity:{value:0.4},
+    size:{value:2,random:true},
+    line_linked:{enable:true,distance:100,color:"#ffffff",opacity:0.3,width:1},
+    move:{enable:true,speed:2}
+  },
+  interactivity:{events:{}},
+  retina_detect:true
+});
+</script>
+
+</body>
+</html>
